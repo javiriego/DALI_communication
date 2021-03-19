@@ -37,3 +37,5 @@ dali_communication\main.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uar
 dali_communication\main.o: ..\MDK-ARM\edge_detection.h
 dali_communication\main.o: ..\MDK-ARM\bus_conditions.h
 dali_communication\main.o: ..\MDK-ARM\timing_functions.h
+dali_communication\main.o: ..\MDK-ARM\global_def.h
+dali_communication\main.o: ..\MDK-ARM\frame_processing.h

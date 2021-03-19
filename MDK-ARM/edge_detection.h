@@ -24,6 +24,11 @@ extern unsigned char _edgePosition;		// Posicion del flanco en el tiempo de bit 
 extern unsigned int _timervalue;			// Valor de cuenta del timer de bit
 
 
+extern uint16_t _halfbit_count;											// Contador de medios bits
+extern unsigned int _HB_EdgeValue[MAX_HB_STORAGE];	// Almacenamiento para cada medio bit analizado
+extern unsigned int _HB_TimeValue[MAX_HB_STORAGE];	// Almacenamiento para cada medio bit analizado
+
+
 /* DEFINICION DE FUNCIONES UTILIZADAS EXTERNAMENTE **************************************************/
 //Reinicio de mitad de bit
 void HalfBit_init(void);

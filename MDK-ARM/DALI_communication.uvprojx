@@ -408,6 +408,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32g0xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>global_def.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\global_def.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -552,6 +557,21 @@
               <FileName>bus_conditions.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\bus_conditions.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Communication</GroupName>
+          <Files>
+            <File>
+              <FileName>frame_processing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\frame_processing.c</FilePath>
+            </File>
+            <File>
+              <FileName>frame_processing.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\frame_processing.h</FilePath>
             </File>
           </Files>
         </Group>

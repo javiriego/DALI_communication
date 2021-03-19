@@ -6,6 +6,8 @@
 #include "edge_detection.h"
 #include "bus_conditions.h"
 #include "timing_functions.h"
+#include "global_def.h"
+#include "frame_processing.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 unsigned char _powerdown;
@@ -24,7 +26,7 @@ void bus_status_stop(void){
 	_powerdown = 0;
 	_timingerror = 0;
 	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
-	/*  PROCESS FRAMEEEEEEEEEEE  */
+	processRxFrame();
 }
 
 void power_down_handler(void){

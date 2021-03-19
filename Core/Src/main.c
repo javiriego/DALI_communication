@@ -22,6 +22,8 @@
 #include "edge_detection.h"
 #include "bus_conditions.h"
 #include "timing_functions.h"
+#include "global_def.h"
+#include "frame_processing.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

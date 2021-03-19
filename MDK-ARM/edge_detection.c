@@ -6,13 +6,14 @@
 #include "edge_detection.h"
 #include "bus_conditions.h"
 #include "timing_functions.h"
+#include "global_def.h"
+#include "frame_processing.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim14;
 extern UART_HandleTypeDef huart2;
-
 unsigned char _edgeType;				// Tipo de flanco (RISING/FALLING)
 unsigned char _postedgeValue;		// Valor de la señal tras un nuevo flanco
 unsigned char _preedgeValue;		// Valor de la señal previa la entrada de un nuevo flanco
@@ -126,9 +127,9 @@ void HalfBit_init(void){
 
 void HalfBitStorage(unsigned char edgeType, unsigned int timervalue){
 	if (_halfbit_count < MAX_HB_STORAGE){
-		_halfbit_count ++;
 		_HB_EdgeValue[_halfbit_count] = edgeType;
 		_HB_TimeValue[_halfbit_count] = timervalue;
+		_halfbit_count ++;
 	}
 }
 

@@ -37,3 +37,5 @@ dali_communication\bus_conditions.o: ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0
 dali_communication\bus_conditions.o: edge_detection.h
 dali_communication\bus_conditions.o: bus_conditions.h
 dali_communication\bus_conditions.o: timing_functions.h
+dali_communication\bus_conditions.o: global_def.h
+dali_communication\bus_conditions.o: frame_processing.h

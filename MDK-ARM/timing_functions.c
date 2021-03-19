@@ -6,6 +6,8 @@
 #include "edge_detection.h"
 #include "bus_conditions.h"
 #include "timing_functions.h"
+#include "global_def.h"
+#include "frame_processing.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 extern TIM_HandleTypeDef htim3;
