@@ -12,6 +12,6 @@ void start_BitTimer(uint16_t countValue);
 void BitTimer_overflow(void);
 void stop_BitTimer(void);
 //Interrupciones por desbordamiento del timer 3  (FRAME TIMER), start y stop:
-void start_FrameTimer (unsigned short int countValue);
+void start_FrameTimer (unsigned int countValue);
 void FrameTimer_overflow(void);
 void stop_FrameTimer(void);

@@ -39,7 +39,7 @@ void BitTimer_overflow(void){
 
 
 /* PUESTA EN MARCHA, PARADA Y DESBORDAMIENTO DEL FRAME TIMER(DETECCION DE "TIMING ERRORS") **********/
-void start_FrameTimer (unsigned short int countValue){		 
+void start_FrameTimer (unsigned int countValue){		 
 	__HAL_TIM_SET_COUNTER(&htim3, 0);	 
 	__HAL_TIM_SET_AUTORELOAD(&htim3, countValue);
 	__HAL_TIM_CLEAR_IT(&htim3,TIM_IT_UPDATE);
