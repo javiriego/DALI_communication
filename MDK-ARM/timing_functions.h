@@ -4,6 +4,10 @@
 #define POWERDOWN_TIME 40000
 #define STOPCOND_TIME  1900
 
+#define POWERDOWN_RESTART_TIME 500000
+#define SEND_TWICE_FRAME_TIME	 99500
+
+/* EXTERNALIZACION DE VARIABLES *********************************************************************/
 extern unsigned char _timingerror;
 
 /* DEFINICION DE FUNCIONES UTILIZADAS EXTERNAMENTE **************************************************/

@@ -14,5 +14,7 @@ extern unsigned char bus_status;
 void power_down_handler(void);
 //Controlador de la condicion de parada
 void stop_condition_handler(void);
+//Controlador para fallos del sistema
+void system_failure_handler(void);
 //Detección del primer flanco de una trama
 void bus_status_fall_edge(void);

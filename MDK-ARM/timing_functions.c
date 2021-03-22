@@ -52,6 +52,8 @@ void stop_FrameTimer(void){
 
 void FrameTimer_overflow(void){
 	stop_FrameTimer();	////////////////////////////////////////////////////////////////////////////////
+	if(_powerdown == 1) system_failure_handler();
+	if(send_twice_frame == ON) send_twice_frame = OFF;
 }
 
 

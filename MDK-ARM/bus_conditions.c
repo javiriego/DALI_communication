@@ -31,10 +31,14 @@ void bus_status_stop(void){
 
 void power_down_handler(void){
 	_powerdown = 1;
-	start_FrameTimer(500000); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
+	start_FrameTimer(POWERDOWN_RESTART_TIME); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
 }
 
 void stop_condition_handler(void){
-	start_FrameTimer(97600); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
+	start_FrameTimer(SEND_TWICE_FRAME_TIME); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
 	bus_status_stop();
+}
+
+void system_failure_handler(void){
+ 	_powerdown = 0; 
 }

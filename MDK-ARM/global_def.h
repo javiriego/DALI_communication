@@ -12,5 +12,8 @@
 #define BITSCLEAR(x,y) (((x) & (y)) == 0)
 #define BITVAL(x,y) (((x)>>(y)) & 1)
 
+#define ON  1
+#define OFF 0
+
 
 typedef enum { false, true } bool;
