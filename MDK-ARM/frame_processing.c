@@ -1,5 +1,7 @@
 /****************************************************************************************************
+*																																																		*
 *                            PROCESAMIENTO DE FRAMES DE ENTRADA Y SALIDA                            *
+*																																																		*
 *****************************************************************************************************/
 #include "main.h"
 #include "stdint.h"
@@ -24,7 +26,7 @@ void processRxFrame(void){
 	for(int n=0; n<MAX_RXBUFFER; n++) rx_buffer_aux[n]=0;
 	if ((_HB_EdgeValue[0]==LOW) && (_HB_EdgeValue[1]==HIGH)){
 		rx_bits_aux = (_halfbit_count-2)/2;
-		// Comprobacion del tamañp del frame
+		// Comprobacion del tamaño del frame
 		if((rx_bits_aux==16)||(rx_bits_aux==24)){
 			// Loop para la primera parte de la trama recibida [ADDRESS]
 			for(int n=0; n<HALFDATA_SIZE; n++){
@@ -58,7 +60,7 @@ void processRxFrame(void){
 		}
 		else{ // SI EL FRAME NO ES DE 16 O 24 BITS ES INVALIDO
 			// Backward or frame size violation	
-			/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			send_twice_frame = OFF;
 		}
 	}
 }

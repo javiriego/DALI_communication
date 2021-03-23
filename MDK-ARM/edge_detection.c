@@ -1,5 +1,7 @@
 /****************************************************************************************************
+*																																																		*
 *                    DETECCION Y TRATAMIENTO DE FLANCOS EN LA SEÑAL DE ENTRADA                      *
+*																																																		*
 *****************************************************************************************************/
 #include "main.h"
 #include "stdint.h"
@@ -32,7 +34,9 @@ void HalfBitHandler(unsigned char edgePosition, unsigned char edgeType,  unsigne
 void TimingErrorHandler(void);
 
 
-/* DETECCION Y TRATAMIENTO DE FLANCOS POR INTERRUPCION **********************************************/
+/****************************************************************************************************
+*                       DETECCION Y TRATAMIENTO DE FLANCOS POR INTERRUPCION                         *
+*****************************************************************************************************/
 void receive_edge(void){
 	//Recogida cuenta del timer
 	_timervalue = __HAL_TIM_GET_COUNTER(&htim14);
@@ -72,22 +76,27 @@ void receive_edge(void){
 	edgeHandler(_edgePosition, _edgeType, _postedgeValue, _timervalue);
 }
 
-
-/* PROCESAMIENTO DE LOS FLANCOS RECIBIDOS Y ALMACENAMIENTO DE LA INFO DE CADA HALFBIT ***************/
+/****************************************************************************************************
+*       PROCESAMIENTO DE LOS FLANCOS RECIBIDOS Y ALMACENAMIENTO DE LA INFO DE CADA HALFBIT          *
+*****************************************************************************************************/
+// MANEJADOR DE FLANCOS:
 void edgeHandler(unsigned char edgePosition, unsigned char edgeType, unsigned char postedgeValue, unsigned int timervalue){
+	// Espera el primer bit del frame (WAITING_FOR_SIGNAL)
 	if(_lineStatus == WAITING_FOR_SIGNAL){
 		HalfBitHandler(AT_BIT_START, edgeType, timervalue);
 		_lineStatus = RECEIVING_SIGNAL;
 	}
-	else{ // RECIBIENDO SEÑAL
+	else{ // Si no es el primer flanco (RECEIVING_SIGNAL)
 		switch (edgePosition){
 			case AT_BIT_MIDDLE:
-				if(timervalue > 317){
+				if(timervalue > 317){	// < 317 us -> TimingError
 					if(timervalue < 517) 				HalfBitHandler(AT_BIT_START, edgeType, timervalue);				// 1 HALF BIT
 					else if(timervalue < 633) 	TimingErrorHandler();																			// GREY AREA
+					// Si se recibe un flanco entre 633 y 1033 us, será en mitad del bit, y habrá ocurrido un cambio de
+					//valor en la trama recibida, por lo que no se habrá detectado flanco al inicion del tiempo de bit
 					else if(timervalue < 1033) {HalfBitHandler(AT_BIT_START, _preedgeValue, timervalue); 	// 2 HALF BIT
 																			HalfBitHandler(AT_BIT_MIDDLE, edgeType, timervalue);}
-					else { // [timervalue > 1033]
+					else { // timervalue > 1033
 						switch (edgeType){
 							case RISING:
 								if(timervalue < STOPCOND_TIME) 	TimingErrorHandler();	// Before STOP CONDITION
@@ -118,6 +127,7 @@ void edgeHandler(unsigned char edgePosition, unsigned char edgeType, unsigned ch
 	}
 }
 
+// PREPARACIÓN DEL SISTEMA PARA LA RECEPCIÓN DE UNA NUEVA TRAMA
 void HalfBit_init(void){
 	_halfbit_count = 0;
 	_edgePosition = AT_BIT_START;
@@ -125,6 +135,7 @@ void HalfBit_init(void){
 	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 }
 
+// ALMACENAMIENTO DE CADA MEDIO BIT
 void HalfBitStorage(unsigned char edgeType, unsigned int timervalue){
 	if (_halfbit_count < MAX_HB_STORAGE){
 		_HB_EdgeValue[_halfbit_count] = edgeType;
@@ -133,6 +144,7 @@ void HalfBitStorage(unsigned char edgeType, unsigned int timervalue){
 	}
 }
 
+// MANEJADOR DE MEDIOS BITS
 void HalfBitHandler(unsigned char edgePosition, unsigned char edgeType, unsigned int timervalue){
 	_edgePosition = edgePosition;
 	_edgeType = edgeType;

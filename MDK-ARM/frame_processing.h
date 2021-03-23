@@ -1,3 +1,9 @@
+/****************************************************************************************************
+*																																																		*
+*                            PROCESAMIENTO DE FRAMES DE ENTRADA Y SALIDA                            *
+*																																																		*
+*****************************************************************************************************/
+/* DEFINICIONES GLOBALES ****************************************************************************/
 #include "stdint.h"
 
 #define MAX_RXBUFFER  3
@@ -13,8 +19,10 @@
 #define SEND_ONCE  1
 #define SEND_TWICE 2
 
+/* EXTERNALIZACION DE VARIABLES *********************************************************************/
 extern unsigned short int rxbits;
 extern unsigned short int rx_buffer[MAX_RXBUFFER];
 extern uint8_t	send_twice_frame;
 
+/* DEFINICION DE FUNCIONES UTILIZADAS EXTERNAMENTE **************************************************/
 void processRxFrame(void);
