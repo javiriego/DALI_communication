@@ -1,8 +1,18 @@
 /****************************************************************************************************
-*																																																		*
 *                           CONDICIONES DEL BUS Y DETECCION DE ERRORES                              *
-*																																																		*
 *****************************************************************************************************/
+/**
+ *****************************************************************************************************
+ * @file 		bus_conditions.c
+ * @author 	Javier Riego Barcia
+ * @version V1.0
+ * @date 		23-Marzo-2021
+ *****************************************************************************************************
+ *
+ *
+ *****************************************************************************************************
+ */
+ 
 #include "main.h"
 #include "stdint.h"
 #include "edge_detection.h"
@@ -18,18 +28,6 @@ unsigned char bus_status;
 /****************************************************************************************************
 *                              FUNCIONES DE CONTROL DEL ESTADO DEL BUS                              *
 *****************************************************************************************************/
-/**
- *****************************************************************************************************
- * @file 		bus_conditions.c
- * @author 	Javier Riego Barcia
- * @version V1.0
- * @date 		23-Marzo-2021
- *****************************************************************************************************
- *
- *
- *****************************************************************************************************
- */
- 
 // COMPROBACION DEL PRIMER FLANCO DESCENDENTE DE UNA TRAMA
 void bus_status_fall_edge(void){
 	if(bus_status == WAITING_FOR_FALL_EDGE){
@@ -50,12 +48,12 @@ void bus_status_stop(void){
 // MANEJADOR DE POWER DOWN (CAIDA DEL BUS)
 void power_down_handler(void){
 	_powerdown = ON;
-	start_FrameTimer(POWERDOWN_RESTART_TIME); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
+	start_FrameTimer(POWERDOWN_RESTART_TIME);
 }
 
 // MANEJADOR DE STOP CONDITION (CONDICION DE PARADA TRAS FIN DE TRAMA)
 void stop_condition_handler(void){
-	start_FrameTimer(SEND_TWICE_FRAME_TIME); ///////////////////////////DIVIDIR POR TICKS/////////////////////////////////
+	start_FrameTimer(SEND_TWICE_FRAME_TIME);
 	bus_status_stop();
 }
 
