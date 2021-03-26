@@ -19,6 +19,7 @@
 #include "timing_functions.h"
 #include "global_def.h"
 #include "frame_processing.h"
+#include "DALI_variables.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 extern TIM_HandleTypeDef htim3;

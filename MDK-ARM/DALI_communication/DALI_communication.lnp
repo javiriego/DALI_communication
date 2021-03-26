@@ -26,6 +26,8 @@
 "dali_communication\timing_functions.o"
 "dali_communication\bus_conditions.o"
 "dali_communication\frame_processing.o"
+"dali_communication\dali_functions.o"
+"dali_communication\dali_variables.o"
 --library_type=microlib --strict --scatter "DALI_communication\DALI_communication.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

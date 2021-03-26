@@ -39,3 +39,7 @@ dali_communication\frame_processing.o: bus_conditions.h
 dali_communication\frame_processing.o: timing_functions.h
 dali_communication\frame_processing.o: frame_processing.h
 dali_communication\frame_processing.o: global_def.h
+dali_communication\frame_processing.o: DALI_variables.h
+dali_communication\frame_processing.o: D:\KeilARM\ARM\ARMCC\Bin\..\include\stdbool.h
+dali_communication\frame_processing.o: global_def.h
+dali_communication\frame_processing.o: DALI_functions.h

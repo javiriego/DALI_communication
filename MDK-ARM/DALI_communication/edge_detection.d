@@ -39,3 +39,7 @@ dali_communication\edge_detection.o: bus_conditions.h
 dali_communication\edge_detection.o: timing_functions.h
 dali_communication\edge_detection.o: global_def.h
 dali_communication\edge_detection.o: frame_processing.h
+dali_communication\edge_detection.o: DALI_variables.h
+dali_communication\edge_detection.o: D:\KeilARM\ARM\ARMCC\Bin\..\include\stdbool.h
+dali_communication\edge_detection.o: global_def.h
+dali_communication\edge_detection.o: DALI_functions.h

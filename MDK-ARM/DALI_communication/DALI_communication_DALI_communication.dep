@@ -1,7 +1,7 @@
 Dependencies for Project 'DALI_communication', Target 'DALI_communication': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32g070xx.s)(0x605319E6)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "STM32G070xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32g070xx.lst --xref -o dali_communication\startup_stm32g070xx.o --depend dali_communication\startup_stm32g070xx.d)
-F (../Core/Src/main.c)(0x605487DC)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\main.o --omf_browse dali_communication\main.crf --depend dali_communication\main.d)
+F (../Core/Src/main.c)(0x6059BFBF)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\main.o --omf_browse dali_communication\main.crf --depend dali_communication\main.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -36,11 +36,11 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-I (..\MDK-ARM\edge_detection.h)(0x6053437B)
-I (..\MDK-ARM\bus_conditions.h)(0x60585009)
-I (..\MDK-ARM\timing_functions.h)(0x60584F81)
-I (..\MDK-ARM\global_def.h)(0x605846DA)
-I (..\MDK-ARM\frame_processing.h)(0x60584E82)
+I (..\MDK-ARM\edge_detection.h)(0x605C6345)
+I (..\MDK-ARM\bus_conditions.h)(0x605C6335)
+I (..\MDK-ARM\timing_functions.h)(0x6059BF9E)
+I (..\MDK-ARM\global_def.h)(0x605D8EF8)
+I (..\MDK-ARM\frame_processing.h)(0x605D921D)
 F (../Core/Src/stm32g0xx_it.c)(0x605319E2)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\stm32g0xx_it.o --omf_browse dali_communication\stm32g0xx_it.crf --depend dali_communication\stm32g0xx_it.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
@@ -77,9 +77,9 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_it.h)(0x605319E2)
-I (..\MDK-ARM\edge_detection.h)(0x6053437B)
-I (..\MDK-ARM\bus_conditions.h)(0x60585009)
-I (..\MDK-ARM\timing_functions.h)(0x60584F81)
+I (..\MDK-ARM\edge_detection.h)(0x605C6345)
+I (..\MDK-ARM\bus_conditions.h)(0x605C6335)
+I (..\MDK-ARM\timing_functions.h)(0x6059BF9E)
 F (../Core/Src/stm32g0xx_hal_msp.c)(0x605319E3)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\stm32g0xx_hal_msp.o --omf_browse dali_communication\stm32g0xx_hal_msp.crf --depend dali_communication\stm32g0xx_hal_msp.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
@@ -115,7 +115,7 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-F (.\global_def.h)(0x605846DA)()
+F (.\global_def.h)(0x605D8EF8)()
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.c)(0x604B3275)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\stm32g0xx_hal_tim.o --omf_browse dali_communication\stm32g0xx_hal_tim.crf --depend dali_communication\stm32g0xx_hal_tim.d)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -696,7 +696,7 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-F (.\edge_detection.c)(0x60545E7D)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\edge_detection.o --omf_browse dali_communication\edge_detection.crf --depend dali_communication\edge_detection.d)
+F (.\edge_detection.c)(0x605DAB84)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\edge_detection.o --omf_browse dali_communication\edge_detection.crf --depend dali_communication\edge_detection.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -731,13 +731,16 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-I (edge_detection.h)(0x6053437B)
-I (bus_conditions.h)(0x60585009)
-I (timing_functions.h)(0x60584F81)
-I (global_def.h)(0x605846DA)
-I (frame_processing.h)(0x60584E82)
-F (.\edge_detection.h)(0x6053437B)()
-F (.\timing_functions.c)(0x605847C7)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\timing_functions.o --omf_browse dali_communication\timing_functions.crf --depend dali_communication\timing_functions.d)
+I (edge_detection.h)(0x605C6345)
+I (bus_conditions.h)(0x605C6335)
+I (timing_functions.h)(0x6059BF9E)
+I (global_def.h)(0x605D8EF8)
+I (frame_processing.h)(0x605D921D)
+I (DALI_variables.h)(0x605DAEE2)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (DALI_functions.h)(0x605DAE81)
+F (.\edge_detection.h)(0x605C6345)()
+F (.\timing_functions.c)(0x605C634B)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\timing_functions.o --omf_browse dali_communication\timing_functions.crf --depend dali_communication\timing_functions.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -772,13 +775,16 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-I (edge_detection.h)(0x6053437B)
-I (bus_conditions.h)(0x60585009)
-I (timing_functions.h)(0x60584F81)
-I (global_def.h)(0x605846DA)
-I (frame_processing.h)(0x60584E82)
-F (.\timing_functions.h)(0x60584F81)()
-F (.\bus_conditions.c)(0x60584F4B)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\bus_conditions.o --omf_browse dali_communication\bus_conditions.crf --depend dali_communication\bus_conditions.d)
+I (edge_detection.h)(0x605C6345)
+I (bus_conditions.h)(0x605C6335)
+I (timing_functions.h)(0x6059BF9E)
+I (global_def.h)(0x605D8EF8)
+I (frame_processing.h)(0x605D921D)
+I (DALI_variables.h)(0x605DAEE2)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (DALI_functions.h)(0x605DAE81)
+F (.\timing_functions.h)(0x6059BF9E)()
+F (.\bus_conditions.c)(0x605DAB7A)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\bus_conditions.o --omf_browse dali_communication\bus_conditions.crf --depend dali_communication\bus_conditions.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -813,13 +819,16 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-I (edge_detection.h)(0x6053437B)
-I (bus_conditions.h)(0x60585009)
-I (timing_functions.h)(0x60584F81)
-I (global_def.h)(0x605846DA)
-I (frame_processing.h)(0x60584E82)
-F (.\bus_conditions.h)(0x60585009)()
-F (.\frame_processing.c)(0x605850F0)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\frame_processing.o --omf_browse dali_communication\frame_processing.crf --depend dali_communication\frame_processing.d)
+I (edge_detection.h)(0x605C6345)
+I (bus_conditions.h)(0x605C6335)
+I (timing_functions.h)(0x6059BF9E)
+I (global_def.h)(0x605D8EF8)
+I (frame_processing.h)(0x605D921D)
+I (DALI_variables.h)(0x605DAEE2)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (DALI_functions.h)(0x605DAE81)
+F (.\bus_conditions.h)(0x605C6335)()
+F (.\frame_processing.c)(0x605DAA6F)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\frame_processing.o --omf_browse dali_communication\frame_processing.crf --depend dali_communication\frame_processing.d)
 I (../Core/Inc/main.h)(0x605319E3)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
@@ -854,9 +863,62 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
-I (edge_detection.h)(0x6053437B)
-I (bus_conditions.h)(0x60585009)
-I (timing_functions.h)(0x60584F81)
-I (frame_processing.h)(0x60584E82)
-I (global_def.h)(0x605846DA)
-F (.\frame_processing.h)(0x60584E82)()
+I (edge_detection.h)(0x605C6345)
+I (bus_conditions.h)(0x605C6335)
+I (timing_functions.h)(0x6059BF9E)
+I (frame_processing.h)(0x605D921D)
+I (global_def.h)(0x605D8EF8)
+I (DALI_variables.h)(0x605DAEE2)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (DALI_functions.h)(0x605DAE81)
+F (.\frame_processing.h)(0x605D921D)()
+F (.\DALI_variables.h)(0x605DAEE2)()
+F (.\DALI_functions.c)(0x605DAE7F)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\dali_functions.o --omf_browse dali_communication\dali_functions.crf --depend dali_communication\dali_functions.d)
+I (../Core/Inc/main.h)(0x605319E3)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x604B3275)
+I (../Core/Inc/stm32g0xx_hal_conf.h)(0x605319E3)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h)(0x604B3275)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h)(0x604B3255)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g070xx.h)(0x604B3255)
+I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x604B325B)
+I (D:\KeilARM\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x604B325B)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x604B325B)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x604B325B)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x604B325B)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/system_stm32g0xx.h)(0x604B3255)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x604B3275)
+I (D:\KeilARM\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_rcc.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dma.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dmamux.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_cortex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_exti.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x604B3275)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x604B3275)
+I (edge_detection.h)(0x605C6345)
+I (bus_conditions.h)(0x605C6335)
+I (timing_functions.h)(0x6059BF9E)
+I (frame_processing.h)(0x605D921D)
+I (global_def.h)(0x605D8EF8)
+I (DALI_variables.h)(0x605DAEE2)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (DALI_functions.h)(0x605DAE81)
+F (.\DALI_functions.h)(0x605DAE81)()
+F (.\DALI_variables.c)(0x605DC979)(--c99 -c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\MDK-ARM-I.\RTE\_DALI_communication-ID:\KeilARM\Packages\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\KeilARM\Packages\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32G070xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G070xx-o dali_communication\dali_variables.o --omf_browse dali_communication\dali_variables.crf --depend dali_communication\dali_variables.d)
+I (D:\KeilARM\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (D:\KeilARM\ARM\ARMCC\include\stdbool.h)(0x5E8E9122)
+I (global_def.h)(0x605D8EF8)
+I (DALI_functions.h)(0x605DAE81)

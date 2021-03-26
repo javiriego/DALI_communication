@@ -5,7 +5,6 @@
  *****************************************************************************************************
  * @file 		edge_detection.c
  * @author 	Javier Riego Barcia
- * @version V1.0
  * @date 		23-Marzo-2021
  *****************************************************************************************************
  *
@@ -20,6 +19,7 @@
 #include "timing_functions.h"
 #include "global_def.h"
 #include "frame_processing.h"
+#include "DALI_variables.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 extern TIM_HandleTypeDef htim3;
@@ -142,7 +142,6 @@ void HalfBit_init(void){
 	_halfbit_count = 0;
 	_edgePosition = AT_BIT_START;
 	_lineStatus = WAITING_FOR_SIGNAL;
-	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 }
 
 // ALMACENAMIENTO DE CADA MEDIO BIT

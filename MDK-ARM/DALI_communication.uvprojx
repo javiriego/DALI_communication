@@ -576,6 +576,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>DALI</GroupName>
+          <Files>
+            <File>
+              <FileName>DALI_variables.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\DALI_variables.h</FilePath>
+            </File>
+            <File>
+              <FileName>DALI_functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DALI_functions.c</FilePath>
+            </File>
+            <File>
+              <FileName>DALI_functions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\DALI_functions.h</FilePath>
+            </File>
+            <File>
+              <FileName>DALI_variables.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DALI_variables.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

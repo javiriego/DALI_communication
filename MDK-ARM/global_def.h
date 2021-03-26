@@ -5,7 +5,6 @@
  *****************************************************************************************************
  * @file 		global_def.h
  * @author 	Javier Riego Barcia
- * @version V1.0
  * @date 		23-Marzo-2021
  * @brief		Global macros and definitions
  *****************************************************************************************************
@@ -28,4 +27,3 @@
 #define ON  1
 #define OFF 0
 
-typedef enum { false, true } bool;

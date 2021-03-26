@@ -5,7 +5,6 @@
  *****************************************************************************************************
  * @file 		bus_conditions.c
  * @author 	Javier Riego Barcia
- * @version V1.0
  * @date 		23-Marzo-2021
  *****************************************************************************************************
  *
@@ -20,6 +19,7 @@
 #include "timing_functions.h"
 #include "global_def.h"
 #include "frame_processing.h"
+#include "DALI_variables.h"
 
 /* VARIABLES Y DEFINICIONES *************************************************************************/
 unsigned char _powerdown;
@@ -41,7 +41,6 @@ void bus_status_fall_edge(void){
 void bus_status_stop(void){
 	_powerdown = OFF;
 	_timingerror = OFF;
-	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
 	processRxFrame();
 }
 
