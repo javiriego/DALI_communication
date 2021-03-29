@@ -17,6 +17,9 @@
  #include "stdbool.h"
  #include "global_def.h"
  #include "DALI_functions.h"
+ 
+ #define STANDARD_CMD 0
+ #define SPECIAL_CMD  1
 
 /* VARIABLES DALI ***********************************************************************************/
 extern uint16_t   actualLevel,									//Nivel de luminosidad actual
@@ -56,3 +59,4 @@ extern bool				statusInfo[8];								// Almacen para los indicadores de estado d
 
 /* COMANDOS DALI ************************************************************************************/
 extern void (*dali_cmd_execute[])(void);
+extern void (*dali_special_cmd_execute[])(uint16_t data);

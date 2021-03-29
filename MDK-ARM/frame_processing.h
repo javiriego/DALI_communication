@@ -36,13 +36,6 @@
 #define MAX_UNAD_BROADC_COM 0xFD //253 (1111 1101)
 #define MAX_BROADC_COM			0xFF //255 (1111 1111)
 
-#define INDIV_CMD   0
-#define GROUP_CMD   1
-#define SPECIAL_CMD 2
-#define RESERV_CMD  3
-#define UBROAD_CMD  4
-#define BROAD_CMD   5
-
 /* EXTERNALIZACION DE VARIABLES *********************************************************************/
 extern unsigned short int rxbits;
 extern unsigned short int rx_buffer[MAX_RXBUFFER];

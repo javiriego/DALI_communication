@@ -32,7 +32,7 @@ uint8_t  S_bit; // Indicador de comando ESTANDAR o DAPC (Direct Arc Power Contro
  * IMPLEMENTACION DE FUNCIONES                                                                      *
  ****************************************************************************************************/
 void check_address(unsigned short int rx_bits, unsigned short int *rx_buffer, uint8_t buffer_size, uint8_t send_cuant);
-void check_command(unsigned short int rx_bits, unsigned short int *rx_buffer, uint8_t send_cuant, uint8_t S_bit);
+void check_command(unsigned short int cmd_type, unsigned short int *rx_buffer, uint8_t send_cuant, uint8_t S_bit);
 
 // Procesamiento de la cadena de flanco almacenada tras la trama de datos ---------------------------
 void processRxFrame(void){
@@ -86,21 +86,25 @@ void check_address(unsigned short int rx_bits, unsigned short int *rx_buffer, ui
 	uint16_t indiv_addr;
 	uint16_t group_addr;
 	uint16_t group_mask = 0;
+	uint16_t cmd_type;
 	S_bit = rx_address & 0x01;
 	// COMANDO INDIVIDUAL *****************************************************
 	if(rx_address <= MAX_INDIV_ADDR){
 		indiv_addr = (rx_address >> 1) & 0x3F;
-		if (indiv_addr == shortAddress) check_command(rx_bits, rx_buffer, send_cuant, S_bit);
+		cmd_type = STANDARD_CMD;
+		if (indiv_addr == shortAddress) check_command(cmd_type, rx_buffer, send_cuant, S_bit);
 	}
 	// COMANDO A GRUPO ********************************************************
 	else if(rx_address <= MAX_GROUP_ADDR){
 		group_addr = (rx_address >> 1) & 0x0F;
+		cmd_type = STANDARD_CMD;
 		SETBIT(group_mask, group_addr);
-		if ((gearGroups & group_mask) != 0) check_command(rx_bits, rx_buffer, send_cuant, S_bit);
+		if ((gearGroups & group_mask) != 0) check_command(cmd_type, rx_buffer, send_cuant, S_bit);
 	}
 	// COMANDO ESPECIAL *******************************************************
 	else if(rx_address <= MAX_SPECIAL_COM){
-		check_command(rx_bits, rx_buffer, send_cuant, S_bit);
+		cmd_type = SPECIAL_CMD;
+		check_command(cmd_type, rx_buffer, send_cuant, S_bit);
 	}
 	// COMANDO RESERVADO ******************************************************
 	else if(rx_address <= MAX_RESERVED_COM){
@@ -108,20 +112,40 @@ void check_address(unsigned short int rx_bits, unsigned short int *rx_buffer, ui
 	}
 	// COMANDO A BROADCAST UNNADDRESSED ***************************************
 	else if(((rx_address & 0xFE)==0xFC) && (shortAddress == 255)){
-		check_command(rx_bits, rx_buffer, send_cuant, S_bit);
+		cmd_type = STANDARD_CMD;
+		check_command(cmd_type, rx_buffer, send_cuant, S_bit);
 	}
 	// COMANDO A BROADCAST ****************************************************
 	else if((rx_address & 0xFE)==0xFE){
-		check_command(rx_bits, rx_buffer, send_cuant, S_bit);
+		cmd_type = STANDARD_CMD;
+		check_command(cmd_type, rx_buffer, send_cuant, S_bit);
 	}
 	// COMANDO NO VALIDO ******************************************************	
 	else __NOP();	
 }
 
-void check_command(unsigned short int rx_bits, unsigned short int *rx_buffer, uint8_t send_cuant, uint8_t S_bit){
-	uint16_t command = rx_buffer[DATA1];
-	(*dali_cmd_execute[command])();
+void check_command(unsigned short int cmd_type, unsigned short int *rx_buffer, uint8_t send_cuant, uint8_t S_bit){
+	// Direct Arc Power Control
+	if(S_bit==0){
+		uint16_t level = rx_buffer[DATA1];
+		DAPC(level); //(level) (Selector_bit == 0)
+	}
+	else{
+		// Comando especial
+		if(cmd_type == SPECIAL_CMD){
+			uint16_t command = rx_buffer[ADDRESS];
+			uint16_t data = rx_buffer[DATA1];
+			(*dali_special_cmd_execute[command])(data);
+		}
+		// Comando estandar
+		else{
+			uint16_t command = rx_buffer[DATA1];
+			(*dali_cmd_execute[command])();
+		}
+	}
 }
+
+
 /* OTRA FORMA DE RESOLVER 
 static unsigned char D2T_CG_FrameFilterIsForMeGet (unsigned char address)
 {
