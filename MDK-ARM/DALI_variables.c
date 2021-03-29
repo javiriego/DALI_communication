@@ -18,8 +18,8 @@
  #include "DALI_functions.h"
 
 /* VARIABLES DALI ***********************************************************************************/
-uint16_t    actualLevel,									//Nivel de luminosidad actual
-						targetLevel,									//Nivel de luminosidad a adquirir
+uint16_t    actualLevel = 0,									//Nivel de luminosidad actual
+						targetLevel = 0,									//Nivel de luminosidad a adquirir
 						lastActiveLevel,							//Ultimo nivel activo
 						lastLightLevel,								//Ultimo nivel de luminosidad [NVS]
 						powerOnLevel,									//Nivel de encendido					[NVS]
@@ -34,12 +34,12 @@ uint16_t    actualLevel,									//Nivel de luminosidad actual
 uint32_t		searchAddress,								//
 						randomAddress;								//														[NVS]
 uint16_t		operatingMode,								//Modo de operacion						[NVS]
-						initialisationState,					//Modo de inicializacion (ENABLED, DISABLED, WITHDRAWN)
+						initialisationState = DISABLED,					//Modo de inicializacion (ENABLED, DISABLED, WITHDRAWN)
 						writeEnableState;							//(ENABLED, DISABLED)
 bool  			controlGearFailure,						//Indicador de fallo del dispositivo
 						lampFailure,									//Indicador de fallo de la luminaria
-						lampOn,												//Indicador de estado (ON/OFF) de la luminaria
-						limitError,										//
+						lampOn = FALSE,												//Indicador de estado (ON/OFF) de la luminaria
+						limitError = FALSE,										//
 						fadeRunning,									//Indicador de fade activo
 						resetState,										//Indicador de estado de reset
 						powerCycleSeen;								//Indicador de ciclo de potencia

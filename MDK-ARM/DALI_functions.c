@@ -20,6 +20,8 @@
 #include "frame_processing.h"
 #include "global_def.h"
 #include "DALI_variables.h"
+
+uint8_t duty_cycle = 0;
  
  /****************************************************************************************************
  *					                              STANDARD COMMANDS																					 *
@@ -28,26 +30,54 @@ void DAPC(uint16_t level){ //level (Selector_bit == 0)
 }
 
 void OFF_command(void){
-	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+	targetLevel = 0;
+	TIM1->CCR1 = targetLevel;
+	actualLevel = targetLevel;
 }
  
-void UP_command(void){
+void UP_command(void){/////////////////////////////////////////////////////////
 }
  
-void DOWN_command(void){
+void DOWN_command(void){///////////////////////////////////////////////////////
 }
 
 void STEP_UP(void){
+	targetLevel += 1;
+	if(targetLevel >= maxLevel) targetLevel = maxLevel;
+	TIM1->CCR1 = targetLevel;
+	actualLevel = targetLevel;
 }
  
 void STEP_DOWN(void){
+	targetLevel -= 1;
+	if(targetLevel <= minLevel) targetLevel = minLevel;
+	TIM1->CCR1 = targetLevel;
+	actualLevel = targetLevel;
 }
  
 void RECALL_MAX_LEVEL(void){	
-	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+	if(initialisationState == DISABLED){
+		targetLevel = maxLevel;
+		TIM1->CCR1 = targetLevel;
+		actualLevel = maxLevel;		
+	}
+	else{
+		// targetLevel = maxLevel;
+		// actualLevel = maxLevel;
+		// Luz -> 100%
+	}
 }
  
-void RECALL_MIN_LEVEL(void){
+void RECALL_MIN_LEVEL(void){if(initialisationState == DISABLED){
+		targetLevel = minLevel;
+		TIM1->CCR1 = targetLevel;
+		actualLevel = minLevel;		
+	}
+	else{
+		// targetLevel = minLevel;
+		// actualLevel = minLevel;
+		// Luz -> PHM
+	}
 }
  
 void STEP_DOWN_N_OFF(void){
