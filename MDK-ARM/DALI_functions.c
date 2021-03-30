@@ -36,9 +36,11 @@ void OFF_command(void){
 }
  
 void UP_command(void){/////////////////////////////////////////////////////////
+	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
 }
  
 void DOWN_command(void){///////////////////////////////////////////////////////
+	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 }
 
 void STEP_UP(void){
